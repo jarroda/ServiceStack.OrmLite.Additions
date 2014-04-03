@@ -7,8 +7,8 @@
     <ProjectGuid>{3C5DD2D1-C82A-4A46-BA87-E93DD344F789}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OrmLiteEx</RootNamespace>
-    <AssemblyName>OrmLiteEx</AssemblyName>
+    <RootNamespace>ServiceStack.OrmLite.Additions</RootNamespace>
+    <AssemblyName>ServiceStack.OrmLite.Additions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
