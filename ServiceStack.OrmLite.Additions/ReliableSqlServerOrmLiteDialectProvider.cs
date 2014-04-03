@@ -8,7 +8,7 @@ using ServiceStack.OrmLite.SqlServer;
 using System.IO;
 using System.Data;
 
-namespace OrmLiteEx
+namespace ServiceStack.OrmLite.Additions
 {
     public class ReliableSqlServerOrmLiteDialectProvider : SqlServerOrmLiteDialectProvider
     {

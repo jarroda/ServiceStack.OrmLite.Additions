@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ServiceStack.Text;
 
-namespace OrmLiteEx
+namespace ServiceStack.OrmLite.Additions
 {
     public static class OrmLiteConfigurator
     {
