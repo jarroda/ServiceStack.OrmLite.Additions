@@ -1,4 +1,4 @@
-﻿ServiceStack.OrmLite.Additions
+﻿ServiceStack.OrmLite.Additions [![Build status](https://ci.appveyor.com/api/projects/status/6mqys3gd83ka9ai9)](https://ci.appveyor.com/project/jarroda/servicestack-ormlite-additions)
 ========================
 This package adds useful functionality to OrmLite v3 
 
