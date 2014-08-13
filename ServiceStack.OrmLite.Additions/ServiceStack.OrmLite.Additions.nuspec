@@ -14,7 +14,7 @@
     <tags>ServiceStack OrmLite API REST transient fault handling failure elazure retries retry</tags>
         <dependencies>
             <dependency id="ServiceStack.OrmLite.SqlServer" version="[3,4)" />
-            <dependency id="EnterpriseLibrary.TransientFaultHandling.Data" version="6" />
+            <dependency id="EnterpriseLibrary.TransientFaultHandling.Data" version="6.0" />
         </dependencies>
   </metadata>
 </package>
