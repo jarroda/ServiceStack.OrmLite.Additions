@@ -15,6 +15,7 @@ namespace ServiceStack.OrmLite.Additions
         public class ModelDefinition<T> : ModelDefinition { }
 
         private static Dictionary<Type, ModelDefinition> _typeModelDefinitionMap = null;
+        private static MethodInfo _methodCache = null;
 
         private static Dictionary<Type, ModelDefinition> GetConfigMap()
         {
@@ -31,8 +32,8 @@ namespace ServiceStack.OrmLite.Additions
         /// <returns>The ModelDefinition object.</returns>
         public static ModelDefinition Init<T>()
         {
-            var method = (MethodInfo)typeof(OrmLiteConfig).Assembly.GetType("ServiceStack.OrmLite.OrmLiteConfigExtensions")
-                .GetMember("Init", MemberTypes.Method, BindingFlags.Static | BindingFlags.Public).First();
+            var method = _methodCache ?? (_methodCache = (MethodInfo)typeof(OrmLiteConfig).Assembly.GetType("ServiceStack.OrmLite.OrmLiteConfigExtensions")
+                .GetMember("Init", MemberTypes.Method, BindingFlags.Static | BindingFlags.Public).First());
 
             return (ModelDefinition)method.Invoke(null, new[] { typeof(T) });
         }
