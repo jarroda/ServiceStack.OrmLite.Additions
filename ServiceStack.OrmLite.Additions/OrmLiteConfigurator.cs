@@ -12,7 +12,11 @@ namespace ServiceStack.OrmLite.Additions
 {
     public static class OrmLiteConfigurator
     {
-        public static Dictionary<Type, ModelDefinition> GetConfigMap()
+        public class ModelDefinition<T> : ModelDefinition { }
+
+        private static Dictionary<Type, ModelDefinition> _typeModelDefinitionMap = null;
+
+        private static Dictionary<Type, ModelDefinition> GetConfigMap()
         {
             var fieldInfo = (FieldInfo)typeof(OrmLiteConfig).Assembly.GetType("ServiceStack.OrmLite.OrmLiteConfigExtensions")
                 .GetMember("typeModelDefinitionMap", MemberTypes.Field, BindingFlags.Static | BindingFlags.NonPublic).First();
@@ -20,7 +24,10 @@ namespace ServiceStack.OrmLite.Additions
             return (Dictionary<Type, ModelDefinition>)fieldInfo.GetValue(null);
         }
 
-        public class ModelDefinition<T> : ModelDefinition { }
+        public static Dictionary<Type, ModelDefinition> TypeModelDefinitionMap 
+        {
+            get { return _typeModelDefinitionMap ?? (_typeModelDefinitionMap = GetConfigMap()); }
+        }        
 
         public static ModelDefinition<T> AddModelDefinition<T>(this Dictionary<Type, ModelDefinition> dict, string alias = null)
         {

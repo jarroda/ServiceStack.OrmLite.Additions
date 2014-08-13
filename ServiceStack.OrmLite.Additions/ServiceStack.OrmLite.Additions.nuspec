@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+        <summary>$description$</summary>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <projectUrl>https://github.com/jarroda/ServiceStack.OrmLite.Additions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides additional classes to enhance OrmLite functionality, including transient fault handling and configuration helpers.</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>ServiceStack OrmLite API REST transient fault handling failure elazure retries retry</tags>
+        <dependencies>
+            <dependency id="ServiceStack.OrmLite.SqlServer" version="[3,4)" />
+            <dependency id="EnterpriseLibrary.TransientFaultHandling.Data" version="6" />
+        </dependencies>
+  </metadata>
+</package>

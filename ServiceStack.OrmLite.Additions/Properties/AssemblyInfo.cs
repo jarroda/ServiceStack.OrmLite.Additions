@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OrmLiteEx")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ServiceStack.OrmLite.Additions")]
+[assembly: AssemblyDescription("Provides additional classes to enhance OrmLite functionality, including transient fault handling and configuration helpers.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OrmLiteEx")]
+[assembly: AssemblyCompany("Jarrod Alexander")]
+[assembly: AssemblyProduct("ServiceStack.OrmLite.Additions")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

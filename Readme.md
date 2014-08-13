@@ -9,8 +9,8 @@ This is an implementation of OrmLite's SqlServer Dialect Provider that utilizes 
 To use, simply replace the regular SqlServer dialect provider with the reliable version when creating the OrmLiteConnectionFactory:
 
 ```csharp
-    var factory = new OrmLiteConnectionFactory(connectionString, ReliableSqlServerOrmLiteDialectProvider.Instance);
-    container.Register<IDbConnectionFactory>(db);
+var factory = new OrmLiteConnectionFactory(connectionString, ReliableSqlServerOrmLiteDialectProvider.Instance);
+container.Register<IDbConnectionFactory>(db);
 ```
 
 ## OrmLiteConfigurator
