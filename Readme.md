@@ -14,3 +14,23 @@ container.Register<IDbConnectionFactory>(db);
 ```
 
 ## OrmLiteConfigurator
+
+The OrmLiteConfigurator is a static class that exposes OrmLite's internal Type -> ModelDefinition mapping.  This allows insepction and modification of the model definition. Additionally, the OrmLiteConfigurator allows the configuration of OrmLite without using attributes on your domain models.  This allows for model classes to reside in an assembly that does not, or can not have a reference to ServiceStack.OrmLite;
+
+To access the mapping or get the ModelDefinition of a type:
+
+```csharp
+var map = OrmLiteConfigurator.TypeModelDefinitionMap;
+var definition = OrmLiteConfigurator.GetModelDefinition<MyModel>();
+```
+
+To configure a type in OrmLite, a fluent interface is provided. Most of OrmLite's features are exposed through the parameters to AddField, including foreign keys.  This should only be done during application startup.
+
+```csharp
+OrmLiteConfigurator.TypeModelDefinitionMap.AddModelDefinition<Project>("Projects")
+    .AddField(p => p.Id, isPrimaryKey: true, isAutoIncrement: true)
+    .AddField(p => p.ProjectName)
+    .AddField(p => p.ProjectNumber, defaultValue: "100")
+    .AddField(p => p.ProjectManagerId, references: typeof(User), onDelete: "CASCADE", onUpdate: "CASCADE")
+    .AddIgnoredField(p => p.ProjectManagerEmail);
+```

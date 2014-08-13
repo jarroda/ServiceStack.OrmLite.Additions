@@ -9,7 +9,7 @@
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <projectUrl>https://github.com/jarroda/ServiceStack.OrmLite.Additions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Provides additional classes to enhance OrmLite functionality, including transient fault handling and configuration helpers.</description>
+    <description>Provides additional classes to enhance OrmLite functionality, including transient fault handling and configuration helpers.  Enables attribute-less configuration of OrmLite.</description>
     <copyright>Copyright 2014</copyright>
     <tags>ServiceStack OrmLite API REST transient fault handling failure elazure retries retry</tags>
         <dependencies>

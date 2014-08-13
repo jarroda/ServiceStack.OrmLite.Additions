@@ -27,7 +27,14 @@ namespace ServiceStack.OrmLite.Additions
         public static Dictionary<Type, ModelDefinition> TypeModelDefinitionMap 
         {
             get { return _typeModelDefinitionMap ?? (_typeModelDefinitionMap = GetConfigMap()); }
-        }        
+        }
+
+        public static ModelDefinition GetModelDefinition<T>()
+        {
+            ModelDefinition map;
+            TypeModelDefinitionMap.TryGetValue(typeof(T), out map);
+            return map;
+        }
 
         public static ModelDefinition<T> AddModelDefinition<T>(this Dictionary<Type, ModelDefinition> dict, string alias = null)
         {
