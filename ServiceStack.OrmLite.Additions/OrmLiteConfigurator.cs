@@ -24,6 +24,19 @@ namespace ServiceStack.OrmLite.Additions
             return (Dictionary<Type, ModelDefinition>)fieldInfo.GetValue(null);
         }
 
+        /// <summary>
+        /// Gets the ModelDefinition of a type if it already exists in the typemap, otherwise creates it through OrmLite's normal method of attribute inspection.
+        /// </summary>
+        /// <typeparam name="T">They model type.</typeparam>
+        /// <returns>The ModelDefinition object.</returns>
+        public static ModelDefinition Init<T>()
+        {
+            var method = (MethodInfo)typeof(OrmLiteConfig).Assembly.GetType("ServiceStack.OrmLite.OrmLiteConfigExtensions")
+                .GetMember("Init", MemberTypes.Method, BindingFlags.Static | BindingFlags.Public).First();
+
+            return (ModelDefinition)method.Invoke(null, new[] { typeof(T) });
+        }
+
         public static Dictionary<Type, ModelDefinition> TypeModelDefinitionMap 
         {
             get { return _typeModelDefinitionMap ?? (_typeModelDefinitionMap = GetConfigMap()); }
