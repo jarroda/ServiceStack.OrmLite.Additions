@@ -2,6 +2,13 @@
 ========================
 This package adds useful functionality to OrmLite v3 
 
+## Installation
+
+Install the NuGet package
+```
+PM> Install-Package ServiceStack.OrmLite.Additions
+```
+
 ## ReliableSqlServerOrmLiteDialectProvider
 
 This is an implementation of OrmLite's SqlServer Dialect Provider that utilizes transient fault handling.  The connections created are instances of ReliableSqlConnection from the Enterprise Library's Transient Fault Handling Application Block.
